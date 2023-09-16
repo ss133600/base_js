@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제</title>
+</head>
+<body>
+
+    <!-- *문제
+    1. con_wrap 클래스 부모 제작
+    2. 부모 안으로 10개 con 클래스 제작
+    3. script사용하여 con에게 h3태그로 감싸진 숫자
+    1~10까지 입력된 내용 출력 -->
+
+    <div class="con_wrap">
+        <div class="con"></div>
+        <div class="con"></div>
+        <div class="con"></div>
+        <div class="con"></div>
+        <div class="con"></div>
+        <div class="con"></div>
+        <div class="con"></div>
+        <div class="con"></div>
+        <div class="con"></div>
+        <div class="con"></div>
+    </div>
+    <script>
+
+        const conEl = document.querySelectorAll('.con');
+
+
+        for(let i = 0; i < conEl.length; i++){
+            conEl[i].innerHTML = `<h3>${i + 1}</h3>`;
+        }
+    </script>
+    
+</body>
+</html>

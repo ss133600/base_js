@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        const num_1 = 10;
+        const num_2 = 2;
+
+    // console.log("덧셈: " + (num1 + num2));
+    // console.log("뺄셈: " + (num1 - num2));
+    // console.log("곱셈: " + (num1 * num2));
+    // console.log("나눗셈: " + (num1 / num2));
+    // console.log("나머지: " + (num1 % num2)); 
+
+    // *역따옴표(``) back tick
+    // =>역따옴표는 기존 따옴표처럼 문자 처리를 할 수 있지만
+    // ${}를 사용하여 변수처리를 간단하게 할 수 있음
+
+    document.write("<h3>산술 연산자</h3>")
+    document.write(`덧셈결과: ${num_1 + num_2} <br>`);
+    document.write(`뺄셈결과: ${num_1 - num_2} <br>`);
+    document.write(`곱셈결과: ${num_1 * num_2} <br>`);
+    document.write(`나눗셈결과: ${num_1 / num_2} <br>`);
+    document.write(`나머지결과: ${num_1 % num_2} <br>`);
+
+    // -----------------------------------------------------------------
+
+    // *증감 연산자
+    // =>무조건 1씩 증가하거나 혹은 1씩 감소 시킬 때 사용
+    // =>++를 앞에 붙이면 1이 증가된 상태에서 출력
+    // =>뒤에 ++를 붙이면 출력 후 1이 증가됨
+
+    let num = 10;
+
+    document.write("<h3>증감 연산자</h3>");
+    // document.write(++num + "<br>");
+    // document.write(++num + "<br>");
+    // document.write(++num + "<br>");
+
+    document.write(num++ + "<br>");
+    document.write(num++ + "<br>");
+    document.write(num++ + "<br>");
+    document.write(num++ + "<br>");
+    document.write(`${num++}<br>`)
+
+    // ------------------------------------
+
+    // *복합 대입 연산자
+    // =>연산자를 대입 및 조합하여 사용하는 연산자
+    // =>증감연산자와 다르게 덧, 뺄, 곱, 나, 나머지 사용 가능
+
+    let number = 0;
+    document.write("<h3>복합 대입 연산자</h3>");
+    document.write(`${number += 5}<br>`);
+    document.write(`${number += 5}<br>`);
+    document.write(`${number += 5}<br>`);
+
+    // -------------------------------------------------------
+    // *비교 연산자
+    // =>값을 비교하여 참, 거짓으로 반환함
+
+    document.write("<h3>비교 연산자</h3>");
+    document.write(`${num_1 > num_2}<br>`);
+    document.write(`${num_1 < num_2}<br>`);
+    document.write(`${num_1 >= num_2}<br>`);
+    document.write(`${num_1 <= num_2}<br>`);
+    document.write(`${num_1 == num_2}<br>`);
+    document.write(`${10 == "10"}<br>`);
+    document.write(`${10 === "10"}<br>`);
+    // => ===은 타입까지 비교하여 booleans값으로 반환 함
+    document.write(`${10 != "15"} <br>`);
+    document.write(`${10 !== "15"} <br>`);
+    // =>!==타입까지 비교
+
+
+    // // ------------------------------------
+
+    // *논리 연산자
+    // // => 두개 이상의 값을 비교하여 참, 거짓값을 반환함
+
+    // 1. AND(&&)연산자
+    // =>값을 비교 후 하나라도 거짓이 있으면 거짓값으로 반환함
+
+    // 2. OR(||)연산자
+    // =>갑을 비교 후 하나라도 참이 있으면 참값을 반환함
+
+    // 3. NOT(!)연산자
+    // =>참인 경우는 거짓, 거짓은 참으로 변경함
+
+    const number1 = 10;
+    const number2 = 5;
+    const bool = true;
+    
+    document.write("<h3>논리 연산자</h3>");
+    document.write(`${number1 > number2 && number1 < number2}<br>`);
+    document.write(`${number1 > number2 || number1 < number2}<br>`);
+    console.log(!bool);
+    
+
+
+
+
+
+
+
+
+
+
+    
+    </script>
+</head>
+<body>
+    
+
+
+</body>
+</html>

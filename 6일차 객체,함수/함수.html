@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    <script>
+
+        // *함수
+        // =>기능이 될 코드를 그룹화 작업화
+        // =>함수를 작성하고 사용할땐 호출하여서 사용함
+
+        // *선언적 함수 (named function)
+        // =>함수에 이름이 있음
+        // =>정의 앞에 호출을 해도 사용 가능
+
+        namedFn();
+
+        function namedFn(){
+            document.write("선언적 함수");
+        }
+
+        
+
+        // *익명 함수(anonymous function)
+        // =>함수에 이름이 없음
+        // =>함수명이 없기 때문에 변수에 함수를 저장하여 사용함
+
+        
+        const anFn = function(){
+            document.write("익명함수");
+        }
+
+        anFn();
+
+
+        const arrowFn = () => {
+            document.write("화살표 함수");
+        }
+
+        arrowFn();
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

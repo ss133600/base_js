@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제1</title>
+    <script>
+
+        // *문제
+        // => 반복문을 사용하여 구구단 7단 출력
+
+        // 출력결과**
+        // 7단
+        // 7x1=7
+        // 7x2=14
+        // ...
+
+        // *문제
+        // =>입력한 숫자의 구구단 출력
+        // document.write("7단<br>");
+        // for(let i = 1; i <= 9; i++){
+        //         document.write(`${7}X${i}=${7*i}<br>`);
+        //     }
+
+
+        let num = Number(prompt("숫자를 입력해주세요")); 
+            document.write(`${num}단<br>`);
+        for(let i = 1; i <= 9; i++){
+            document.write(`${num}X${i}=${num*i}<br>`);
+        }
+            
+        // for(let a = 1; a <= 9; a++){
+        //     document.write(`${a}단<br>`);
+        //     for(let b = 1; b <= 9; b++){
+        //         document.write(`${a} X ${b} = ${a*b}<br>`);
+        //     }
+        //     document.write(`<br>`);
+        // }
+        
+        
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

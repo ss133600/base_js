@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch</title>
+    <script>
+
+        // *switch ~ case
+        // =>if문과 또 다른 조건문
+        // ex) 
+        // switch(조건){
+        //     case 조건1: 출력값
+        //         break;
+        //     case 조건2: 출력값
+        //         break;
+        //     case 조건3: 출력값
+        //         break;
+        //     default: 조건이 없을때 출력값
+        //         break;
+        // }
+        // =>break는 조건에 만족했을때 하단에(case) 있는 조건식을 식행하지 않음
+        // =>default는 원하는 조건에 만족하지 못하면 실행
+
+        const num = 5;
+
+        switch(num){
+            case 1:
+                console.log("입력한 값은 1입니다");
+                break;
+            case 2:
+                console.log("입력한 값은 2입니다");
+                break;
+            case 3:
+                console.log("입력한 값은 3입니다");
+                break;
+            default:
+                console.log("1~3까지 숫자만 가능합니다");
+                break;
+
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

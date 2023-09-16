@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>style</title>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+
+        // *Script 스타일
+        // =>선택자.style.css속성명 = "속성값";
+        // =>(-)하이픈은 사용할 수 없기 때문에 이어지는 첫번째 글자는
+        // 대문자(카멜케이스)로 처리할것
+        // =>inline style로 적용되기 때문에 우선순위가 높음
+        // (css와 작업시 우선순위 확인할것)
+        // =>단위 반드시 넣어줄것
+
+        
+        const boxEl = document.querySelector('.box');
+
+        boxEl.style.width = "300px";
+        boxEl.style.height = "300px";
+        boxEl.style.backgroundColor = "teal";
+
+    </script>
+</body>
+</html>

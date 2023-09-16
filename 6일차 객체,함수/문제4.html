@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // *문제
+        // 1. 객체에 유저아이디, 패스워드 저장
+        // 2. 입력한 유저아이디가 객체에 저장된값과 다르면
+        // 아이디가 틀렸습니다
+        // 3. 입력한 패스워드가 객체에 저장된
+        // 값과 다르면 패스워드가 틀렸습니다.
+
+        const user = {
+            username : "test",
+            password : "123456"
+        }
+
+        const inputUsername = prompt("아이디를 입력해주세요");
+        const inputPassword = prompt("패스워드를 입력해 주세요");
+
+        // if(inputUsername !== user.username){
+        //     document.write("<h2>아이디가 틀렸습니다!</h2>");
+        // }else if(inputPassword !== user.password){
+        //     document.write("<h2>패스워드가 틀렸습니다!</h2>");
+        // }else{
+        //     document.write("<h2>로그인되었습니다.</h2>")
+        // }
+
+        if(inputUsername !== user.username){
+            document.write("<h2>아이디가 틀렸습니다!</h2>");
+        }else if(inputPassword !== user.password){
+            document.write("<h2>패스워드가 틀렸습니다!</h2>");
+        }else if(inputUsername === user.username && inputPassword === user.password){
+            document.write("<h2>로그인되었습니다.</h2>")
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

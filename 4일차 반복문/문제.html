@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제1</title>
+    <script>
+
+        // 1번.
+        // document.write("8단<br>");
+        // for(let i = 1; i < 10; i++){
+        //     document.write("8 x " + i + "=" + (8 * i) + "<br>");
+        // }
+
+
+        // 2번.
+        // let num = Number(prompt("숫자를 입력해주세요"));
+        //     document.write(num + "단<br>");
+        // for(let i = 1; i < 10; i++){
+        //     document.write(num + "X" + i + "=" + (num*i) + "<br>");
+        // }
+
+
+        // 3번.
+
+        let num = Number(prompt("숫자를 입력해주세요"));
+        let i = num % 2;
+            document.write(`<h2>${num}단</h2>`);
+        if(i === 0){
+            for(let i = 2; i < 10; i+=2){
+                document.write(`${num}X${i}=${num*i}<br>`);
+            }
+        }else{
+            for(let i = 1; i < 10; i+=2){
+                document.write(`${num}X${i}=${num*i}<br>`);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

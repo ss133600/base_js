@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+</head>
+<body>
+    
+    <h3>장바구니</h3>
+    <p><span>0</span>개</p>
+    <button class="up">+</button>
+    <button class="down">-</button>
+
+    <script>
+
+        const countEl = document.querySelector('p span');
+        const upEl = document.querySelector('.up');
+        const downEl = document.querySelector('.down');
+        let num = 0;
+
+        const upHandler = () => {
+            if(num >= 10){
+                alert("더 이상 증가 할 수 옴서요~~");
+                return;
+            }
+            countEl.innerText = num += 1;
+        }
+
+        const downHandler = () => {
+            if(num <= 0){
+                alert("더 이상 감소 할 수 옴서요~~");
+                return;
+            }
+            countEl.innerText = num -= 1;
+        }
+
+
+
+        upEl.addEventListener('click', upHandler)
+        downEl.addEventListener('click', downHandler)
+
+
+    </script>
+
+
+</body>
+</html>

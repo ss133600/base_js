@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width: 60%;
+            display: flex;
+            justify-content: space-between
+        }
+
+        .con{
+            width: 30%;
+            height: 200px;
+            background-color: coral;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .active{
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="con">1</div>
+        <div class="con">2</div>
+        <div class="con">3</div>
+    </div>
+<br><br>
+    <div class="all">
+        <div class="con">4</div>
+        <div class="con">5</div>
+        <div class="con">6</div>
+    </div>
+    <script>
+        const conEl_1 = document.querySelector(".con:nth-child(1)");
+        // console.log(conEl_1);
+        const conAll = document.querySelectorAll('.con');
+        console.log(conAll);
+        conEl_1.classList.add('active');
+        // =>선택자에 클래스를 추가할때
+        conAll[1].classList.remove('con');
+        // =>선택자에 클래스를 삭제할 때 사용
+        // conAll[2].classList.toggle('active');
+        // =>선택자에 클래스를 추가 또는 삭제할때 사용
+        // =>add + remove
+
+        const isActive = conAll[2].classList.contains('active');
+        // =>선택자에 지정한 클래스명이 포함되어 있는지 여부를 확인 후 
+        // boolean값으로 반환함
+
+        console.log(isActive);
+
+
+        
+
+    </script>
+</body>
+</html>
+

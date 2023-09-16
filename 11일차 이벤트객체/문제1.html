@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            max-width: 450px;
+            width: 100%;
+            margin: 100px auto;
+        }
+
+        .con{
+            margin-bottom: 50px;
+            border: 1px solid #dbdbdb;
+        }
+
+        .bg{
+            height: 400px;
+            background-color: lightgray;
+        }
+
+        .bottom_wrap{
+            padding: 20px 10px;
+        }
+
+        .heart{
+            color: #333;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .full_heart{
+            color: crimson;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="con">
+            <div class="bg"></div>
+            <div class="bottom_wrap">
+                <div class="heart">
+                    <i class="fa-regular fa-heart"></i>
+                    <!-- <i class="fa-solid fa-heart full_heart"></i> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="con">
+            <div class="bg"></div>
+            <div class="bottom_wrap">
+                <div class="heart">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const wrapEl = document.querySelector('.wrap');
+
+        const handleHeart = (e) => {
+            // console.log(e.target);
+            if(e.target.classList.contains("fa-regular")){
+            e.target.parentNode.innerHTML = '<i class="fa-solid fa-heart full_heart"></i>'
+
+            }else if(e.target.classList.contains("full_heart")){
+                e.target.parentNode.innerHTML = '<i class="fa-regular fa-heart"></i>'
+            }
+
+        }
+
+        wrapEl.addEventListener('click', handleHeart)
+
+    </script>
+</body>
+</html>

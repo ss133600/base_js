@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .con{
+            width: 30%;
+            height: 300px;
+            background-color: coral;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="con_wrap">
+        <div class="con">1</div>
+        <div class="con">2</div>
+        <div class="con">3</div>
+
+        <script>
+
+            // *이벤트 위임
+            // =>이벤트를 적용시킬 엘리먼트가 많다면 부모에게 이벤트를 위임하여
+            // 하나의 이벤트에 여러 결과값을 표현 할 수 있음
+
+
+            // *이벤트 객체
+            // =>이벤트 함수의 첫번째 매개변수로 변수명은 관례상 e 또는 event로 사용함
+            // =>객체 내부에는 이벤트의 여러 정보를 가지고 있음
+
+            const conWrapEl = document.querySelector('.con_wrap');
+
+            const clickHander = (e) => {
+                // console.log(e.currentTarget);
+                // =>현재 이벤트가 걸려있는 엘리먼트를 가져옴
+
+                console.log(e.target);
+                // =>클릭한 엘리먼트를 가져옴
+
+                e.target.classList.add("active");
+            }
+
+            conWrapEl.addEventListener('click', clickHander)
+        </script>
+    </div>
+</body>
+</html>

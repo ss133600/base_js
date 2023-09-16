@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제2</title>
+    <script>
+
+        // *문제2
+        // =>등급의 점수를 알려주는 프로그램 제작
+        // =>a~f등급을 입력하면 각 등급에 맞게 점수 출력
+        // a: 100 ~ 90점
+        // b: 90 ~ 80점
+        // c: 80 ~ 70점
+        // d: 70 ~ 60점
+        // e: 60 ~ 50점
+
+        // **출력결과 
+        // =>b를 입력하면
+        // B등급 점수 : 90 ~ 80점
+
+        const num = prompt("등급을 입력해주세요");
+
+        switch(num){
+            case "a":
+                document.write("--> A등급 점수 : 100 ~ 90점");
+            break;
+            case "b":
+                document.write("--> B등급 점수 : 90 ~ 80점");
+            break;
+            case "c":
+                document.write("--> C등급 점수 : 80 ~ 70점");
+            break;
+            case "d":
+                document.write("--> D등급 점수 : 70 ~ 60점");
+            break;
+            case "e":
+                document.write("--> E등급 점수 : 60 ~ 50점");
+            break; 
+            default:
+                document.write("--> 시험첬니?");
+            break;
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

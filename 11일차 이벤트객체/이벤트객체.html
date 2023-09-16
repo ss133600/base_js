@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트객체</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap{
+            padding: 100px 0;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .con_wrap{
+            max-width: 450px;
+            width: 100%;
+            border: 1px solid #eee;
+            margin-bottom: 100px;
+        }
+
+        header{
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        .bg{
+            height: 500px;
+            background-color: lightgray;
+        }
+
+        .heart{
+            padding: 30px;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        
+        .fa-solid{
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    
+
+    <div class="wrap">
+
+        <div class="con_wrap">
+            <header></header>
+            <div class="bg"></div>
+            <div class="heart">
+                <i class="fa-regular fa-heart"></i>
+            </div>
+
+        </div>
+
+        <div class="con_wrap">
+            <header></header>
+            <div class="bg"></div>
+            <div class="heart">
+                <i class="fa-regular fa-heart"></i>
+            </div>
+    </div>
+
+    <script>
+
+        // // const likeEl = document.querySelector('.like');
+        // const lidkAll = document.querySelectorAll('.like');
+
+        // const handleLike = () => {
+        
+        //     likeAll[0].innerText = "♥"
+        // }
+
+        // likeAll[0].addEventListener('click', handleLike)
+        // =>현재 작업은 각각 엘리먼트 한테 이벤트를 각각 걸어줘야되므로
+        // 비효율적임
+
+        // -------------------------------------------------------
+        // *이벤트 객체
+        // =>이벤트 함수의 첫번째 매개변수로 e 또는 event를 작성하여 사용
+        // =>이벤트의 여러 정보를 가지고 있으며, 원하는 값을 얻어와 사용
+
+        const wrapEl = document.querySelector('.wrap');
+        
+        const handleClick = (e) => {
+
+            // console.log(e);
+            // console.log(e.currentTarget)
+            // =>이벤트가 적용되어있는 엘리먼트를 가져옴
+
+            // console.log(e.target);
+            // =>클릭한 엘리먼트를 가져옴
+
+            // e.target.innerText = "♥"
+            if(e.target.classList.contains('fa-regular')){
+                // console.log(e.target.parentNode);
+                // =>parentNode는 선택자의 부모로 접근할때 사용
+                e.target.parentNode.innerHTML = '<i class="fa-solid fa-heart"></i>'
+            }else if(e.target.classList.contains('fa-solid')){
+                e.target.parentNode.innerHTML = '<i class="fa-regular fa-heart"></i>'
+            }
+        }
+
+
+        wrapEl.addEventListener('click', handleClick)
+
+    </script>
+</body>
+</html>

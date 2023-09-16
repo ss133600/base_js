@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>createElement</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .con{
+            width: 30%;
+            height: 200px;
+            background-color: teal;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+
+        <div class="con">1</div>
+        <div class="con">2</div>
+        <div class="con">3</div>
+
+    </div>
+
+    <script>
+
+        // *document.createElement("태그명")
+        // =>원하는 태그명을 넣으면 태그를 생성 할 수 있음
+
+        // *body선택자
+        // =>querySeletor로 선택할 수 있지만
+        // document.body를 사용하여 선택할수도 있음
+
+        // *선택자.appendChild()
+        // =>선택자의 마지막 자식으로 추가 할 수 있음
+
+        // *선택자.removeChild()
+        // =>선택자 안에 있는 자식을 삭제함
+
+      const wrapEl = document.querySelector('.wrap');
+      const conEl_3 = document.querySelector('.con:nth-child(3)');
+      console.log(conEl_3);
+      const pEl =  document.createElement("p");
+      pEl.innerText = "p태그 생성했음!😎"
+      console.log(pEl);
+
+      document.body.appendChild(pEl);
+    //   document.querySelector('.wrap').appendChild(pEl);
+      wrapEl.appendChild(pEl);
+
+      wrapEl.removeChild(conEl_3);
+
+      
+    </script>
+</body>
+</html>
+
+
+<!-- CRUD
+C: create
+R: read
+U: update
+D: delete -->
+
+<!-- SPA
+=> Single Page Application
+=> 한 페이지에서 업데이트 된 내용만 변경
+=> 새로고침 할 필요가 없음
+=> 속도가 빠름 -->

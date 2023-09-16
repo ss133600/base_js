@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localstorage</title>
+</head>
+<body>
+
+    <button>삭제</button>
+
+    <script>
+
+        // *localStorage
+        // =>브라우저 저장소
+        // =>키(key), 값(value)
+        // =>검사창 -> Application ->  LocalStorage
+
+        localStorage.setItem("name", "가나다");
+        // =>로컬스토리지에 키와 값을 입력하여 저장할 수 있음
+
+        const getName = localStorage.getItem("name");
+        // =>로컬스토리지에 저장된 키를 넣으면 값을 얻어올 수 있음
+        document.write(getName);
+
+        const btnEl = document.querySelector('button');
+
+        const handleDelete = () => {
+
+            localStorage.removeItem("name");
+            // =>로컬스토리지에 있는 키를 삭제할 수 있음
+        }
+
+
+        btnEl.addEventListener('click', handleDelete)
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>현재시간</h1>
+        <div class="clock">00:00:00</div>
+    </div>
+
+    <script>
+
+        const clockEl = document.querySelector('.clock');
+
+        
+
+        // console.log(hour, min, sec);
+
+        // clockEl.innerText = `${hour}:${min}:${sec}`;
+
+        const clockHandler = () => {
+            // console.log(123);
+            const now = new Date();
+            // => 현재 년 월 일 시 분 초를 가져옴
+            // => getxx()메서드를 이용하여 원하는 시분초 등 가져올 수 있음
+            const hour = String(now.getHours()).padStart(2 , "0");
+            const min = String(now.getMinutes()).padStart(2 , "0");
+            const sec = String(now.getSeconds()).padStart(2 , "0");
+            // =>padStart(길이, 첫글자) 
+            // =>문자 타입으로 사용 가능하며 첫번째 글자에 원하는 문자를 붙여 
+            // 새로운 값을 반환함 
+
+            clockEl.innerText = `${hour}:${min}:${sec}`;
+
+        }
+        clockHandler();
+        // => 함수 호출하여 처음 화면에 html내용이 아닌
+        // 현재 시간을 바로 보여줄 수 있음
+
+        setInterval(clockHandler, 1000);
+
+    </script>
+</body>
+</html>

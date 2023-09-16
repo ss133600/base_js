@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parentNode</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width: 200px;
+            background-color: lightgray;
+            border-radius: 50px;
+            margin: 100px 50px;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+            transition: 0.5s;
+            border-radius: 50%;
+            cursor: pointer;
+            transform: scale(0.9);
+        }
+
+        .wrap.active{
+            background-color: mediumaquamarine;
+        }
+        /* =>클래스명.클래스명으로 붙여서 사용하면
+        새로붙은 2번째 클래스를 선택할 수 있음 */
+
+        .wrap.active .box{
+            transform: translate(100px) scale(0.9);
+            background-color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box"></div>
+    </div>
+
+    <script>
+        const wrapEl = document.querySelector('.wrap');
+
+        const clickHandler = (e) => {
+            // e.target.classList.toggle("active");
+            // console.log(e.target);
+            // console.log(e.target.parentNode);
+            // =>부모 엘리먼트로 접근할 수 있음
+
+            // e.target.parentNode.classList.toggle("active"); 
+            // 만약에 클릭한 엘리먼트가 box클래스 명이 있다면
+            // 부모 엘리먼트 한테 active를 추가 하겠다
+
+            const parentEl = e.target.parentNode;
+
+            if(e.target.classList.contains("box")){
+                parentEl.classList.toggle("active");
+            }
+        }
+
+
+        wrapEl.addEventListener('click', clickHandler);
+    </script>
+</body>
+</html>

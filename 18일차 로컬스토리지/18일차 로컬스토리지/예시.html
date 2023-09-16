@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="name_wrap">
+        <h2 class="name"></h2>
+        <button class="delete">삭제</button>
+    </div>
+
+    <form>
+        <h2 class="title">이름을 등록해 주세요</h2>
+        <input type="text">
+        <button>등록</button>
+    </form>
+
+    <script>
+
+        const formEl = document.querySelector('form');
+        const inputEl = document.querySelector('input');
+        const nameWrapEl = document.querySelector('.name_wrap');
+        const nameEl = document.querySelector('.name');
+        const deleteEl = document.querySelector('.delete');
+
+        const showName = () => {
+            const getName = localStorage.getItem("name");
+            if(getName !== null){
+                nameEl.innerText = `${getName}님 환영합니다.`;
+                formEl.style.display = "none";
+                deleteEl.style.display = "block";
+            }else{
+                formEl.style.display = "block";
+                deleteEl.style.display = "none";
+            }
+        }
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+
+            const inputValue = inputEl.value;
+            localStorage.setItem("name", inputValue);
+
+            showName();            
+        }
+
+        const handleDelete = () => {
+            //삭제버튼을 클릭하면, 로컬스토리지에 저장되어 있는
+            // name키를 삭제해야됨
+
+            localStorage.removeItem("name");
+            
+            window.location.reload();
+            //페이지 새로고침!!!!
+
+        }
+
+
+        showName();
+        formEl.addEventListener('submit', handleSubmit);
+        deleteEl.addEventListener('click', handleDelete);
+
+    </script>
+</body>
+</html>

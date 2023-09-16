@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩반복문</title>
+    <script>
+
+        // *중첩반복문
+        // =>부모 반복문이 한번 출력될때 자식 반복문은 전체 순회를 하여 출력함
+
+        // for(let i = 1; i <= 4; i++){
+        //     document.write(`<h3>${i}</h3>`);
+        //     for(let n = 5; n <= 8; n++){
+        //         document.write(n);
+        //     }
+        // }
+
+
+        for(let i = 1; i <= 9; i++){
+            document.write(`<h3>${i}단</h3>`)
+            for(let n = 1; n <= 9; n++){
+                document.write(`${i} X ${n} = ${i * n} <br>`)
+            }
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

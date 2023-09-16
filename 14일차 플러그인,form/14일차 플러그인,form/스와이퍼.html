@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스와이퍼</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper {
+        width: 600px;
+        height: 300px;
+        border: 1px solid black;
+        }
+
+        .con{
+            font-size: 50px;
+        }
+
+
+    </style>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</head>
+<body>
+
+    <!-- *플러그인
+    =>컴퓨터에 추가 프로그램을 설치하여 특정 기능을
+    수행할 수 있도록 하는 소프트웨어
+    =>필요한 기능을 만들어 다른 사람이 사용할 수 있도록 만들어둠
+    =>플러그인들이 모인것이 라이브러리
+
+    *플러그인 사용시 주의사항
+    =>반드시 공식문서 참고 하기
+    =>지정된 클래스, 아이디 등 선택자 범위 사용
+    =>무분별하게 사용하면 사이트 최적화 문제 및
+    코드 충돌 등 개발중 오류가 발생 할 수 있음
+-->
+
+    <div class="swiper wrap">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide con">Slide 1</div>
+            <div class="swiper-slide con">Slide 2</div>
+            <div class="swiper-slide con">Slide 3</div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+      </div>
+
+    <script>
+            const swiper = new Swiper('.swiper', {
+            // direction: 'vertical',
+            // =>방향: 세로
+            loop: true,
+            // =>반복할지 말지  Boolean값으로 설정
+                
+            autoplay: {
+            delay: 1000, 
+            pauseOnMouseEnter:true
+            // =>마우스를 올렸을때 슬라이드가 정지됨
+            
+            },
+            // =>자동재생 여부, delay속성으로 시간 부여
+            
+            effect: 'fade',
+                fadeEffect: {
+                crossFade: true
+            },
+            // => fade효과를 적용할 수 있음
+
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            // =>쪽매김이란 뜻으로 하단 버튼 활성화 여부
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            // =>화살표 활성화 여부
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+            // =>스크롤바 활성화 여부
+            
+        });
+    </script>
+
+
+    
+</body>
+</html>

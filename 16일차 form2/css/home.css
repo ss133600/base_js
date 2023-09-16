@@ -1,0 +1,20 @@
+header{
+    padding: 25px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header a{
+    color: black;
+}
+
+.menu_wrap{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.menu_wrap li{
+    margin-left: 50px;
+}

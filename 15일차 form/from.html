@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+</head>
+<body>
+    
+    <form>
+        <h3>로그인</h3>
+        <input class="username" type="text" placeholder="아이디를 입력해주세요~">
+        <input class="password" type="password" placeholder="패스워드를 입력해주세요">
+        <p></p>
+        <button>로그인</button>
+
+        <!-- <h3>회원가입</h3>
+        <input type="text" placeholder="아이디를 입력해주세요">
+        <input type="password" placeholder="패스워드를 입력해주세요">
+        <input type="text" placeholder="이름을 입력해주세요">
+        <input type="email" placeholder="이메일을 입력해주세요"> -->
+
+    </form>
+
+    <script>
+
+        const user = {
+            username: "test",
+            password: "123"
+        }
+
+        const formEl = document.querySelector('form');
+        const usernameEl = document.querySelector('.username');
+        const passwordEl = document.querySelector('.password');
+        const pEl = document.querySelector('p');
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            // =>태그가 가지고 있는 기본 이벤트를 실행시키지 않음
+            const usernameValue = usernameEl.value;
+            // =>인풋선택자.value는 인풋태그에 입력한 내용을 얻어옴
+            const passwordValue = passwordEl.value;
+
+            if(usernameValue !== user.username){
+                pEl.innerText = "아이디가 틀렸습니다";
+            }else if(passwordValue !== user.password){
+                pEl.innerText = "비밀번호가 틀렸습니다";
+            }else{
+                alert("로그인 되었습니다!");
+            }
+            
+        }
+
+
+        formEl.addEventListener('submit', handleSubmit)
+
+    </script>
+</body>
+</html>

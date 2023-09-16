@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+    <script>
+
+        // *객체(object)
+        // =>배열과 비슷하게 여러 요소를 저장할 수 있지만
+        // 객체는 값들을 상세하게 정의하여 저장할 수 있음
+        // =>{} 중괄호를 사용함
+        // =>속성과 값으로 구분됨
+        // =>배열, 변수, 함수 등 저장 가능
+        // =>객체 안의 함수를 메서드라고 함
+        // ex)
+        // const obj = {
+        //     속성: 값,
+        //     속성: 값,
+        //     ...
+        // }
+        
+        // *접근연산자(점 표기법)
+        // =>객체의 속성으로 접근할 때 사용
+
+        // *this
+        // =>오브젝트 내부에서 오브젝트명을 한번더 선택할때 사용
+        
+        const obj = {
+            name: "가나다",
+            age: 10,
+            intro: function(){
+                document.write(`안녕 내 이름은 ${this.name}이야 나이는 ${this.age}살 이라고 해`);
+            }
+        }
+
+        // console.log(obj.name);
+        // console.log(obj.age);
+        obj.intro();
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

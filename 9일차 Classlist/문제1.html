@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .con{
+            width: 30%;
+            height: 200px;
+            display: flex;
+            font-size: 50px;
+            background-color: cornflowerblue;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .active{
+            animation: motion 1s 1 forwards
+        }
+
+        @keyframes motion {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.5);
+            }
+
+            75% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                border-top-right-radius: 0;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="con">1</div>
+        <div class="con">2</div>
+        <div class="con">3</div>
+    </div>
+    <script>
+        // *문제
+        // 1. 새로운 p태그 생성
+        // 2. p태그 안쪽으로 네이버 새창으로 열리는 a태그 삽입
+        // 3. box_wrap의 자식으로 p태그 추가
+        // 4. 1번 자식 한테 active 추가 시키기
+        // 5. 3번째 자식 삭제 하기
+
+        const box_wrap = document.querySelector('.wrap');
+        const PEl = document.createElement("p");
+        const cons_1 = document.querySelector('.con:nth-child(1)');
+        const cons_3 = document.querySelector('.con:nth-child(3)')
+
+        box_wrap.appendChild(PEl);
+        PEl.innerHTML = `<a href="http://naver.com" target="blank">네이버</a>`
+
+        console.log(cons_1);
+        cons_1.classList.add('active');
+        cons_3.classList.remove('con');
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제</title>
+    <script>
+
+        // *문제
+        // 1. 숫자를 입력할 수 있는 prompt 제작
+        // 2. 입력한 숫자가 홀수면 "홀수 입니다" 또는
+        // 짝수면 "짝수 입니다" 출력하기
+
+        
+        const num = Number(prompt("숫자를 입력하세요"));
+        const result = num % 2;
+
+        if(result === 0){
+            document.write("짝수입니다");
+        }else if(result === 1){
+            document.write("홀수입니다");
+        }else{
+            document.write("숫자만 입력해주세요");
+        }
+
+        // result === 0 ? document.write("짝수입니다") : document.write("홀수입니다")
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

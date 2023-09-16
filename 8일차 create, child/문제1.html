@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제</title>
+</head>
+<body>
+    <ul>
+
+    </ul>
+
+    <script>
+        const siteUrl = [
+            {
+                id: 0,
+                name: "네이버",
+                url: "http://naver.com",  
+            },
+            {
+                id: 1,
+                name: "유튜브",
+                url: "http://youtube.com",  
+            },
+            {
+                id: 2,
+                name: "인스타그램",
+                url: "http://instagram.com",  
+            }
+        ];
+        
+        // =>위 배열 사용
+        // =>반복문, createElement, appendChild, innerHTML활용
+
+        // **출력결과
+        // 네이버
+        // 유튜브
+        // 인스타그램
+
+
+        const wrap = document.querySelector("ul");
+
+        for(let i = 0; i < siteUrl.length; i++){
+            const li_123 = document.createElement("li");
+            li_123.innerHTML = `<a href = ${siteUrl[i].url}>${siteUrl[i].name}</a>` 
+            wrap.appendChild(li_123);
+        }
+
+        // const ulEl = document.querySelector('ul');
+
+        // for (let i = 0; i < siteUrl.length; i++){
+        //     const liEl = document.createElement('li');
+        //     liEl.innerHTML = `<a href="${siteUrl[i].url}">${siteUrl[i].name}</a>`
+        //     ulEl.appendChild(liEl);
+        // }
+
+       
+    </script>
+</body>
+</html>

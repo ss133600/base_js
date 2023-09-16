@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제</title>
+
+</head>
+<body>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+    <div class="con"></div>
+
+    <script>
+        // *문제
+        // -html
+        // =>con클래스 명으로 10개 엘리먼트 생성
+
+
+        // -js
+        // =>con 10개 자식에게
+        // h3태그로 감싸진 숫자 1~10까지 출력
+
+        const conEl = document.querySelectorAll('.con');
+        
+        for(let i = 0; i < conEl.length; i++){
+            console.log(conEl[i]);
+            conEl[i].innerHTML = `<h3>${i+1}</h3>` 
+        }
+        
+        // console.log(conEl);
+    </script>
+</body>
+</html>

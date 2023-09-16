@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom script</title>
+    
+</head>
+<body>
+    <div class="box">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    
+    <div id="box"></div>
+
+    <div class="con">1</div>
+    <div class="con">2</div>
+    <div class="con">3</div>
+    
+    <h3>태그</h3>
+
+    <script>
+
+        // *DOM script
+        // =>Document Object Model의 약자
+        // =>문서를 표현하고, 조작하고, 저장 등을 함
+
+        // *document.querySelector()
+        // =>원하는 엘리먼트를 선택해 올 수 있음
+        // =>태그, 클래스, 아이디, 자식, 자속, 구조선택자 등등 사용 가능
+        // =>동일한 클래스명이 있다면 첫번째 엘리먼트만 선택됨
+        // =>반드시 정의한 엘리먼트 밑으로 스크립트를 작성해야 가져올 수 있음
+
+
+
+        const boxEl = document.querySelector('.box');
+        console.log(boxEl);
+
+        const hEl = document.querySelector('h3');
+        console.log("h3태그 선택",hEl);
+
+        const idBoxEl = document.querySelector('#box');
+        console.log("아이디 선택자", idBoxEl);
+
+        const itemEl_2 = document.querySelector('.box .item:nth-child(2)');
+        console.log("자식, 구조 선택자", itemEl_2);
+
+        const conEl = document.querySelector('.con');
+        console.log("클래스명 동일할때", conEl);
+        
+    </script>
+
+</body>
+</html>

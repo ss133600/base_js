@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap"></div>
+
+    <div class="box_wrap">
+        <div class="box_1">1</div>
+        <div class="box_2"></div>
+    </div>
+
+    <script>
+
+        const bodyEl = document.querySelector('body');
+        const wrapEl = document.querySelector('.wrap');
+        const boxWrapEl = document.querySelector('.box_wrap');
+        const boxEl_1 = document.querySelector('.box_1');
+        const boxEl_2 = document.querySelector('.box_2');
+
+        const pEl = document.createElement('p');
+        // =>원하는 태그를 생성 할 수 있음
+
+        const headerEl = document.createElement('header');
+        // console.log(headerEl);
+        headerEl.innerHTML = "<h4>헤더 태그입니다!</h4>";
+        // console.log(headerEl);
+        boxEl_2.appendChild(headerEl);
+
+        pEl.innerText = "새로 생성된 태그엔 글자를 넣을 수 있음";
+        // console.log(pEl);
+        wrapEl.appendChild(pEl);
+        // =>부모 기준으로 자식을 추가할 수 있음
+
+        boxWrapEl.removeChild(boxEl_1);
+        // =>부모 기준으로 선택한 자식을 삭제할 수 있음
+
+        bodyEl.appendChild(pEl);
+        document.body.appendChild(pEl);
+        // =>body태그는 querySelector를 이용하여 선택할수도 있지만
+        // document.body객체를 이용해서 선택하는 방법도 있음
+    </script>
+</body>
+</html>

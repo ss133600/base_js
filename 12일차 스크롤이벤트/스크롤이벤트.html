@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap{
+            height: 400vh;
+        }
+
+        header{
+            height: 100px;
+            background-color: lightgray;
+        }
+
+        section{
+            background-color: gray;
+            height: 700px;
+        }
+
+        .box{
+            margin: 100px auto;
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+            transform: translateY(200px);
+            transition: 0.5s;
+            opacity: 0;
+        }
+
+        .active{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <header>헤더</header>
+
+        <section>섹션</section>
+
+        <div class="box"></div>
+
+
+
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제3</title>
+    <script>
+        // *문제
+        // =>카드의 종류에 따라 금액 차감하는 프로그램 제작
+        // =>카드 종류는 일반, 어린이 두 종류
+        // =>카드 기본금액은 10000원으로 저장
+        // =>어린이 요금은 500원
+        // =>일반 요금은 1300원
+        // =>일반을 입력하면 
+        // "일반입니다, 잔액은 8700원 입니다"
+        // =>어린이를 입력하면
+        // "어린이입니다, 잔액은 9500원 입니다"
+        // 단, 함수로 정의, return을 사용할 것
+
+
+        // *유저입장
+        // 1. 일반, 어린이인지 종류
+        // 2. 10000원
+
+        // *단말기 입장
+        // =>일반, 어린이인지 확인
+        // =>만약에 일반인 이라면 -1300해줘야함
+        // =>그게 아니라면 어린이라면 -500
+        // =>결과값을 출력
+
+
+        const my_card = prompt("카드 종류 입력");
+
+        const card_fn = (card, pay) => {
+            let result;
+
+            if(card === "어린이"){
+                // -500원 빼기
+                result = pay - 500
+            }else if(card === "일반"){
+                // -1300빼기
+                result = pay - 1300
+            }
+
+            return `${card}입니다, 잔액은 ${result} 입니다.`
+        }
+
+        const end = card_fn(my_card, 10000);
+
+        document.write(end);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

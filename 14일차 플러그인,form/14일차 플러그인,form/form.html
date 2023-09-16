@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="글을 적어보세요~">
+        <input type="submit" value="">
+        <button>등록</button>
+    </form>
+
+    <h3></h3>
+
+    <script>
+        const formEl = document.querySelector('form');
+        const inputEl = document.querySelector('input');
+        const h3El = document.querySelector('h3');
+        
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            // 태그가 가지고 있는 기본적인 이벤트를 실행하지 않게 막음
+            const value = inputEl.value;
+            // =>인풋태그에 입력한 값을 얻어올수 있음
+
+            h3El.innerText = `${inputValue}님 환영합니다.`
+            h3El.innerText = value;
+
+
+
+        }
+
+        formEl.addEventListener('submit', handleSubmit)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: hsl(44, 100%, 50%);
+            transition: 0.5s;
+        }
+
+        .box_2{
+            margin-top: 50px;
+            background-color: tomato;
+        }
+
+        
+        .color_active{
+            background-color: midnightblue;
+            border-radius: 50%;
+        }
+
+        
+    </style>
+</head>
+<body>
+    
+
+    <div class="box"></div>
+    <div class="box box_2"></div>
+
+    
+    <script>
+
+        // *이벤트
+        // =>프로그램에 의해 감지되고 처리될 수 있는 동작 및 행동
+
+        // *선택자.addEventListener("이벤트명", 실행함수);
+        // =>선택자에 원하는 이벤트를 적용할 수 있음
+        // =>함수는 안쪽 또는 바깥쪽으로 뺄 수도 있음
+
+
+        const boxEl = document.querySelector('.box');
+        const boxEl_2 = document.querySelector('.box_2');
+        // 1. addEventListener 내부에 함수 작성 예시
+        // boxEl.addEventListener('click', () => {
+        //     console.log("클릭했음!");
+        // });
+
+
+
+        // 2.함수를 외부로 뺄때 예시
+        // const handleClick = () => {
+        //     console.log("함수를 외부로 뺐음");
+        // }
+        // boxEl.addEventListener('click', handleClick)
+
+       
+
+        // const handleColorChange = () => {
+        //     boxEl.style.backgroundColor = "gold"
+        //     boxEl_2.classList.add('color_active');
+        // }
+        // boxEl.addEventListener('click', handleColorChange);
+// -------------------------------------------------------------------------
+         // *문제
+        // =>박스를 클릭할때마다 배경색이 변경되게 만들기
+        // ex)
+        // 노 -> 파 -> 노 -> 파 ->노 반복
+
+        let isColor = true;
+
+        const handleColorChange = () => {
+            // boxEl.classList.toggle('color_active');
+            if(isColor){
+                boxEl.classList.add('color_active');
+                isColor = false;
+            }else if(!isColor){
+                boxEl.classList.remove("color_active");
+                isColor = true;
+            }
+        }
+
+
+        boxEl.addEventListener('click', handleColorChange)
+
+    </script>
+
+</body>
+</html>

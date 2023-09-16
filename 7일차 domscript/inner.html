@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <script>
+
+        const boxEl_1 = document.querySelector('.box:nth-child(1)');
+        // boxEl_1.innerText = "첫번째 박스";
+        // =>선택된 태그 내부에 글자를 넣을 수 있음
+
+        boxEl_1.innerHTML = "<i>태그 입력 !!'😊</i>"
+        // =>선택된 태그 내부에 태그 및 글자를 넣을 수 있음
+
+
+    </script>
+</body>
+</html>

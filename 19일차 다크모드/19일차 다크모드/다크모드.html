@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .con{
+            width: 400px;
+            margin: 100px auto;
+            border: 1px solid #eee;
+        }
+
+        .bg{
+            height: 300px;
+            background-color: lightgray;
+        }
+
+        .title_wrap{
+            text-transform: uppercase;
+            padding: 20px 15px;
+        }
+
+        .title_wrap h3{
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .title_wrap p{
+            color: gray;
+        }
+
+        .dark_mode{
+            width: 50px;
+            margin-top: 15px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: navy;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        body.dark_active{
+            background-color: #1d1d1d;
+        }
+        /* =>선택자.클래스선택자 : 선택자에 클래스명이 붙으면
+        지정한 스타일이 적용됨 */
+
+        body.dark_active .title_wrap h3{
+            color: white;
+        }
+
+        body.dark_active .title_wrap p{
+            color: #dbdbdb;
+        }
+        body.dark_active .dark_mode{
+            background-color: rgba(255, 255, 255, 0.5);
+            color: gold;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="con">
+
+        <div class="bg"></div>
+        <div class="title_wrap">
+        <h3>this is title</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+    </div>
+
+    <div class="dark_mode">
+        <i class="fa-solid fa-moon"></i>
+    </div>
+    </div>
+    <script>
+        const btnEl = document.querySelector('.dark_mode');
+        let getActive;
+
+        getActive = localStorage.getItem('DARK_MODE');
+        if(getActive === "on"){
+            document.body.classList.add('dark_active');
+            btnEl.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        }
+
+        const handleDarkMode = () => {
+            getActive = localStorage.getItem('DARK_MODE');
+
+            if(getActive === null){
+                localStorage.setItem("DARK_MODE", "on");
+                document.body.classList.add('dark_active');
+                btnEl.innerHTML = '<i class="fa-solid fa-sun"></i>'
+            }else{
+                localStorage.removeItem("DARK_MODE");
+                document.body.classList.remove('dark_active');
+                btnEl.innerHTML = '<i class = "fa-solid fa-moon"></i>'
+            }
+
+        }
+
+        btnEl.addEventListener('click', handleDarkMode)
+
+
+        
+    </script>
+</body>
+</html>
+
+
+<!-- 
+버튼클릭(활성화)
+1. 로컬스토리지 세팅
+2. 클래스 추가
+3. 아이콘 변경 
+
+버튼클릭(비활성화)
+
+-->

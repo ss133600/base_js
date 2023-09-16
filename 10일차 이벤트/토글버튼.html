@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .btn_wrap{
+            width: 250px;
+            height: 100px;
+            border-radius: 100px;
+            background-color: lightgray;
+            margin: 100px auto;
+            position: relative;
+            transition: 0.2s;
+        }
+
+        .circle{
+            width: 90px;
+            height: 90px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .bg_active{
+            background-color: #6bd55c;
+        }
+
+        .move_active{
+            left: 125px;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn_wrap">
+        <div class="circle"></div>
+    </div>
+
+    <script>
+
+        const btnWrapEl = document.querySelector('.btn_wrap');
+        const circleEl = document.querySelector('.circle');
+
+        let active = true;
+        const clickHandler = () => {
+            if(active){
+                btnWrapEl.classList.add('bg_active');
+                circleEl.classList.add('move_active');
+                active = false;
+            }else if(!active){
+                btnWrapEl.classList.remove('bg_active');
+                circleEl.classList.remove('move_active');
+                active = true;
+            }
+        }
+
+        btnWrapEl.addEventListener('click', clickHandler)
+    </script>
+</body>
+</html>

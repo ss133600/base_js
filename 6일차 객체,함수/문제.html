@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문제1</title>
+    <script>
+
+        // *문제
+        // 1. 유저 정보 객체 생성
+        // 2. 객체의 속성은 username, email, profileImg
+        // 3. 속성에 맞게 속성값 지정
+
+        // **출력결과
+        // ##유저정보##
+        // 유저아이디: sideway <- 본인이 저장한 객체 명에 맞게
+        // 이메일: side@way.com
+        // 프로필 이미지: me.jpg
+        // =>write 이용할 것
+        // =>h2태그 이용할 것
+
+        const obj = {
+            username: "sfnsdfg",
+            email: "ajsdkfl@naver.com",
+            profileImg: "me.jpg",
+            intro: function(){
+                document.write(`<h2>유저아이디: ${this.username} </h2>
+                                <h2>이메일: ${this.email}</h2>
+                                <h2>프로필 이미지: ${this.profileImg}</h2>`);
+            }
+        }
+
+        obj.intro();
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

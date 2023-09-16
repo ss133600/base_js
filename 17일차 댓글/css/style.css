@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #eee;
+}
+
+.wrap{
+    max-width: 500px;
+    width: 100%;
+    margin: 100px auto;
+    padding: 30px;    
+}
+
+.con{
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #f1f1f1;
+}
+
+header{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.more_btn{
+    cursor: pointer;
+}
+
+.user_wrap{
+    display: flex;
+    align-items: center;
+}
+
+.username{
+    font-size: 16px;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    background-color: lightgray;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.bg{
+    height: 400px;
+    background-color: lightgray;
+}
+
+.bottom_wrap{
+    padding: 15px;
+}
+
+.heart{
+    font-size: 24px;
+    color: #555;
+    cursor: pointer;
+}
+
+.like{
+    margin-top: 10px;
+}
+
+form{
+    display: flex;
+    margin: 10px 0;
+}
+
+input{
+    all: unset;
+    width: 85%;
+    padding: 7px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button{
+    all: unset;
+    width: 15%;
+    background-color: rgb(177, 177, 255);
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500px;
+    cursor: pointer;
+}
+
+.comment{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}

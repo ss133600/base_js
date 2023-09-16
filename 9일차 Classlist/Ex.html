@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .btn_wrap{
+            width: 100px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: lightgray;
+            margin: 100px auto;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .circle{
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 2.5px;
+            margin-left: 2.5px;
+
+        }
+
+        .bg_active{
+            background-color: greenyellow;
+        }
+
+        .active{
+            right: 2.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn_wrap">
+        <div class="circle"></div>
+    </div>
+
+    <script>
+        const btnEl = document.querySelector('.btn_wrap');
+        const circleEl = document.querySelector('.circle');
+        btnEl.addEventListener('click', () => {
+            circleEl.classList.add('active');
+            btnEl.classList.add('bg_active');
+        })
+    </script>
+</body>
+</html>

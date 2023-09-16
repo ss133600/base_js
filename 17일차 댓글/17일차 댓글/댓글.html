@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>댓글</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul,li{
+            list-style: none;
+        }
+
+        .wrap{
+            max-width: 450px;
+            width: 100%;
+            margin: 100px auto;
+            padding: 30px;
+        }
+
+        .con{
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+
+        header{
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user_wrap{
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar{
+            width: 40px;
+            height: 40px;
+            background-color: lightgray;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        header h3{
+            font-size: 15px;
+
+        }
+
+        .more_btn{
+            cursor: pointer;
+        }
+
+        .bg{
+            height: 400px;
+            background-color: lightgray;
+        }
+
+        .bottom_con{
+            padding: 15px;
+        }
+
+        .heart{
+            font-size: 24px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        form{
+            display: flex;
+            margin: 10px 0;
+        }
+
+        input{
+            all: unset;
+            width: 85%;
+            padding: 7px;
+            border: 1px solid #ddd;
+        }
+
+        button{
+            all: unset;
+            width: 15%;
+            background-color: #0987e3;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .comment{
+            margin: 10px 0;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="con">
+            <header>
+                <div class="user_wrap">
+                    <div class="avatar"></div>
+                    <h3>Sideway</h3>
+                </div>
+                <div class="more_btn">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+            </header>
+    
+            <div class="bg"></div>
+    
+            <div class="bottom_con">
+                <div class="heart"></div>
+                <i class="fa-regular fa-heart"></i>
+                <form>
+                    <input type="text" placeholder="댓글 입력">
+                    <button>등록</button>
+                </form>
+    
+                <div class="comment_wrap"></div>
+            </div>
+    
+        </div>
+        
+    </div>
+    <script>
+        const formEl = document.querySelector('form');
+        const inputEl = document.querySelector('input');
+        const commentWrapEl = document.querySelector('.comment_wrap');
+
+        const handleComment = (e) => {
+            e.preventDefault();
+
+            const commentValue = inputEl.value;
+            // commentWrapEl.innerText = value;
+
+            // p태그생성
+            // 생성한 태그 안에 value 삽입
+            // 완성본 p태그를 comment_wrap 자식으로 추가
+
+            const commentEl = document.createElement("p");
+            commentEl.innerText = commentValue;
+            commentEl.classList.add("comment");
+            commentWrapEl.appendChild(commentEl);
+            
+            inputEl.value = "";
+        }
+
+        formEl.addEventListener('submit', handleComment)
+
+        
+
+        const heartEl = document.querySelector('.heart');
+
+        const handleClick = (e) => {
+            if(e.target.classList.contain('fa-regular')){
+                e.target.parentNode.innerHTML = '<i class="fa-solid fa-heart"></i>'
+            }else if(e.target.classList.contain('fa-solid')){
+                e.target.parentNode.innerHTML('')
+            }
+
+        }
+
+        heartEl.addEventListener('click', handleClick)
+
+
+
+    </script>
+
+</body>
+</html>

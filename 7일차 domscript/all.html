@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all</title>
+</head>
+<body>
+    
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    
+    <script>
+
+        // document.querySelector()
+        // =>여러 태그 또는 클래스를 선택할 수 있음
+        // =>배열 형태로 출력됨
+        // =>배열처럼 불러서 사용
+
+        const boxAll = document.querySelectorAll('.box');
+        console.log(boxAll[0]);
+        console.log(boxAll[1]);
+        console.log(boxAll[2]);
+
+        boxAll[0].innerText = "글자를 넣을수 있습니돵~_~"
+        // =>태그에 내용을 적을 수 있음
+
+        boxAll[1].innerHTML = `
+        <a href="http://naver.com">네이버 바로가기 &rarr;</a>
+        `
+        // =>태그 및 내용을 적을 수 있음
+
+        
+
+
+    </script>
+</body>
+</html>
